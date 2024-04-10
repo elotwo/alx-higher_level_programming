@@ -26,7 +26,9 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ' '
         else:
-            c = str("#")
-            print("{}".format(c))
             return 2 * (self.width + self.height)
-
+            for s in range(self.width):
+                for x in range(self.height):
+                    str_a = '#'
+                    print("{}".format(str_a[x]), end = '')
+                    x +
