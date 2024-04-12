@@ -24,11 +24,15 @@ class Rectangle:
         return a
     def perimeter(self):
         if self.width == 0 or self.height == 0:
-            return ' '
+            return 0
         else:
             return 2 * (self.width + self.height)
-            for s in range(self.width):
-                for x in range(self.height):
-                    str_a = '#'
-                    print("{}".format(str_a[x]), end = '')
-                    x +
+    def __str__(self):
+        if (self.width == 0 or self.height == 0):
+            return " "
+        rectangle_str = ""
+        for _ in range(self.width):
+            rectangle_str += "#"
+        for _ in range(self.height):
+            rectangle_str += "#" * self.width + "\n"
+            return rectangle_str[:-1]
