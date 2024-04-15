@@ -1,28 +1,21 @@
 #!/usr/bin/python3
+
 def matrix_divided(matrix, div):
-    divided_results = []
-    list(divided_results)
-    if all(isinstance(x, (int, float))for x in matrix):
-        n = len(matrix)
-        c = 0
-        while c <= n:
-            a = len(matrix[c])
-            c += 1
-        b = a
-        if a != b:
-            raise TypeError("Each row of the matrix must have the same size")
-        else:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-        if not isinstance(div, (int, float)):
-            raise TypeError("div must be a number")
-        if div == 0:
-            raise ZeroDivisionError("division by zero")
-        for row in matrix:
-            divided_row = []
-            list(divided_row)
-            for element in row:
-                divide = element / div
-                divided_row.append(divide)
-            divided_results.append(divided_row)
+    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     
-    return divided_results
+    if not all(isinstance(num, (int, float)) for row in matrix for num in row):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    row_lengths = {len(row) for row in matrix}
+    if len(row_lengths) != 1:
+        raise ValueError("Each row of the matrix must have the same size")
+
+    return [[round(num / div, 2) for num in row] for row in matrix]
+
