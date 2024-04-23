@@ -41,10 +41,16 @@ class Rectangle(Base):
         self.__y = value
     def area(self):
         return self.__height * self.__width
-    def display(self):
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#",end = "")
-            print()
+    def display(self, *args):
+        if len(args) <= 2:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    print("#",end = "")
+                print()
+        else:
+            for _ in range(self.__x):
+                for _ in range(self.__y):
+                    print("#",end = "")
+                print()
     def __str__(self):
-        return f"[Rectangle] (<id>) self.__x/self.__y - self.__width/self.__height"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
