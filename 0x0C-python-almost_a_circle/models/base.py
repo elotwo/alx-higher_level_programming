@@ -5,6 +5,9 @@ public instance attribute id
 """
 #!/usr/bin/python3
 class Base:
+    """
+    class Base generate id on increment
+    """
     __nb_objects = 0
     def __init__(self, id=None):
         if id is not None :
