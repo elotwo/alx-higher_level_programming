@@ -1,6 +1,8 @@
+import sys
+sys.path.append('/home/emmanuel/alx-higher_level_programming/0x0C-python-almost_a_circle/tests')
 import unittest
-from base import Base
-class TestBase(unittest.Testcase):
+from models.base import Base
+class TestBase(unittest.TestCase):
     def tes_Base(self):
         b1 = Base(id=100)
         self.assertEqual(b1.id, 100)
