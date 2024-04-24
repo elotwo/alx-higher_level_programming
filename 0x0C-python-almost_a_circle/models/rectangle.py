@@ -6,7 +6,7 @@ and also its attribute are of private. it's caculates areas of the rectangle by 
 atrribute height and width
 """
 #!/usr/bin/python3
-from base import Base
+from models.base import Base
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -84,10 +84,12 @@ class Rectangle(Base):
                 print()
     def __str__(self):
         """
+          A public method for string
         """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
     def update(self, *args, **kwargs):
         """
+        A public method that assign an arguiment to each attribute
         """
         if len(args) > 5:
             return
