@@ -1,5 +1,7 @@
 """
 This is my module base
+It is base class for rectangle and square class
+class base generate id on each call
 """
 #!/usr/bin/python3
 class Base:
