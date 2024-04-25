@@ -1,7 +1,5 @@
 """
 This is my module base
-The module base conatains a private class __nb_objects and a
-public instance attribute id
 """
 #!/usr/bin/python3
 class Base:
