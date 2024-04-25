@@ -72,9 +72,11 @@ class Rectangle(Base):
         The method(function) display is used to display the stucture of the
         rectangle with character "#"
         """
+        print("\n")
         if len(args) <= 2:
-            for i in range(self.__height):
-                for j in range(self.__width):
+            for _ in range(self.__height):
+                print(" " * self.__x, end="")
+                for _ in range(self.__width):
                     print("#",end = "")
                 print()
         else:
@@ -84,8 +86,6 @@ class Rectangle(Base):
                 print()
         if self.__height == 0 or self.__width == 0:
             print("\n")
-        elif self.__x == 0 or self.__y == 0:
-            print()
     def __str__(self):
         """
           A public method for string
