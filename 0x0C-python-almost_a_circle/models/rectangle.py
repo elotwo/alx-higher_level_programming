@@ -80,8 +80,12 @@ class Rectangle(Base):
         else:
             for _ in range(self.__x):
                 for _ in range(self.__y):
-                    print("#",end = "")
+                    print("#", end = "")
                 print()
+        if self.__height == 0 or self.__width == 0:
+            print("\n")
+        elif self.__x == 0 or self.__y == 0:
+            print()
     def __str__(self):
         """
           A public method for string
