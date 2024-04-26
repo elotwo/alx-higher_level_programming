@@ -95,14 +95,13 @@ class Rectangle(Base):
         """
         A public method that assign an arguiment to each attribute
         """
-        if args:
+        if args and args != None:
             if len(args) > 5:
                 return
             attributes = ["id", "_Rectangle__width", "_Rectangle__height", "_Rectangle__x", "_Rectangle__y"]
-            for arg, attribute in zip(args, attributes):
-                setattr(self, attribute, arg)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+            for arg, attribute in zip(args, attributes):                   setattr(self, attribute, arg)
+        else:
+            for key, value in kwargs.items():                              setattr(self, key, value)
 
                 
 
