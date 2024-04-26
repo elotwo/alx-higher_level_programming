@@ -99,9 +99,14 @@ class Rectangle(Base):
             if len(args) > 5:
                 return
             attributes = ["id", "_Rectangle__width", "_Rectangle__height", "_Rectangle__x", "_Rectangle__y"]
-            for arg, attribute in zip(args, attributes):                   setattr(self, attribute, arg)
-        else:
-            for key, value in kwargs.items():                              setattr(self, key, value)
+            for arg, attribute in zip(args, attributes):
+                setattr(self, attribute, arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    setattr(self, key, value)
+                else:
+                    setattr(self, f"_Rectangle__{key}", value)
 
                 
 
