@@ -14,9 +14,9 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-    def height(self):
+    def get_height(self):
         return  self.__height
-    def height(self, value):
+    def set_height(self, value):
         """
         method height is used to check if its value is of int data type, 
         other wise an error will be raise
@@ -26,9 +26,9 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
-    def width(self):
+    def get_width(self):
        return self.__width
-    def width(self, value):
+    def set_width(self, value):
         """
         method width is used to check if its value is of int data type,
         other wise it will raise an error
@@ -38,9 +38,9 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    def x(self):
+    def get_x(self):
        return  self.__x
-    def x(self, value):
+    def set_x(self, value):
         """
         method(function) "x" is used to check if its value is of int data type,
         other wise it will raise an error
@@ -50,9 +50,9 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-    def y(self):
+    def get_y(self):
        return self.__y
-    def y(self, value):
+    def set_y(self, value):
         """
         method "y" is used to check if its value is of int data type,
         other wise it will raise an error
