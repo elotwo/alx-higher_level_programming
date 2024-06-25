@@ -3,6 +3,7 @@ import sys
 import MySQLdb
 db = MySQLdb.connect(
         host = "localhost",
+        port=3306,
         user = "root",
         password = "88888-Fg",
         database = "hbtn_0e_0_usa"
