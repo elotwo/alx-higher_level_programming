@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import MySQLdb
-def list_state (mysql username, mysql password, database name):
+def list_state (mysql_username, mysql_password, database_name):
     db = MySQLdb.connect(
             host = "localhost",
             port=3306,
