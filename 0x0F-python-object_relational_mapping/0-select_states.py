@@ -9,12 +9,12 @@ def list_state (mysql username, mysql password, database name):
             password = "88888-Fg",
             database = "hbtn_0e_0_usa"
             )
-    cursor = db.cursor();
-    cursor.execute("SELECT id, name FROM states ORDER BY id ASC");
+    cursor = db.cursor()
+    cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
     myresult = cursor.fetchall()
     for x in myresult:
-        print(x);
-    cursor.close();
-    db.close();
+        print(x)
+    cursor.close()
+    db.close()
 if __name__ == '__main__':
     list_state ('mysql_username', 'mysql_password', 'database_name')
