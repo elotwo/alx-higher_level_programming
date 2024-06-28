@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import sys
 import MySQLdb
-def list_state (mysql_username, mysql_password, database_name):
+def list_state (mysql_username='root', mysql_password='88888-Fg', database_name='hbtn_0e_0_usa'):
     db = MySQLdb.connect(
             host = "localhost",
             port=3306,
-            user = "root",
-            password = "88888-Fg",
-            database = "hbtn_0e_0_usa"
+            user=mysql_username,
+            password=mysql_password,
+            database=database_name
             )
     cursor = db.cursor();
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC");
@@ -17,5 +17,5 @@ def list_state (mysql_username, mysql_password, database_name):
     cursor.close()
     db.close()
 if __name__ == '__main__':
-    list_state ('mysql_username', 'mysql_password', 'database_name')
+    list_state ('root', '88888-Fg', 'hbtn_0e_0_usa')
      
