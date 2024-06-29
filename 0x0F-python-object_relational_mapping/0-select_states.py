@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 import sys
 import MySQLdb
-def list_state (mysql_username, mysql_password, database_name):
+
+
+def list_state(mysql_username, mysql_password, database_name):
     db = MySQLdb.connect(
-            host = "localhost",
+            host="localhost",
             port=3306,
             user=mysql_username,
             password=mysql_password,
@@ -16,11 +18,13 @@ def list_state (mysql_username, mysql_password, database_name):
         print(x)
     cursor.close()
     db.close()
+
+
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-         print("Usage: ./2-my_filter_states.py <mysql_username> <mysql_password> <database_name>")
-         sys.exit(1)
+        print("Usage:./2-my_filter_states.py <mysql_username> <database_name>")
+        sys.exit(1)
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    list_state (mysql_username, mysql_password, database_name)
+    list_state(mysql_username, mysql_password, database_name)
