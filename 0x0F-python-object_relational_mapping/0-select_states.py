@@ -1,9 +1,20 @@
 #!/usr/bin/python3
+"""
+this module is abuot listing states in the database hbtn_0e_0_usa
+
+"""
 import sys
 import MySQLdb
 
 
 def list_state(mysql_username, mysql_password, database_name):
+    """
+        Lists all states from the specified database, sorted by states.id in ascending order.
+        Args:
+        mysql_username (str): The MySQL username.
+        mysql_password (str): The MySQL password.
+        database_name (str): The name of the database to query.
+    """
     db = MySQLdb.connect(
             host="localhost",
             port=3306,
