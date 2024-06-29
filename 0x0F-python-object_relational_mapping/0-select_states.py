@@ -10,7 +10,7 @@ import MySQLdb
 def list_state(mysql_username, mysql_password, database_name):
     """
         Lists all states from the specified database',
-        sorted by states.id in ascending order.
+       zz`zz`d by states.id in ascending order.
         Args:
         mysql_username (str): The MySQL username.
         mysql_password (str): The MySQL password.
