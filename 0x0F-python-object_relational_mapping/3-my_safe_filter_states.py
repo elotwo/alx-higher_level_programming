@@ -4,14 +4,14 @@ import MySQLdb
 
 def list_state(mysql_username, mysql_password, database_name, state_name_searched):
     db =  MySQLdb.connect(
-            host='localhost',
+            host="localhost",
             port=3306,
             user=mysql_username,
             password=mysql_password,
             database=database_name
             )
     mycursor = db.cursor()
-    query = "SELECT id, name FROM states WHERE name = %s ORDER BY id ASC"
+    query = "SELECT id, name FROM states WHERE name = '%s' ORDER BY id ASC"
     mycursor.execute(query, (state_name_searched,))
     myresult = mycursor.fetchall()
     for x in myresult:
