@@ -12,7 +12,7 @@ def list_state(mysql_username, mysql_password, database_name):
             database=database_name
             )
     cursor = db.cursor()
-    cursor.execute(f"SELECT id, name FROM cities ORDER BY id ASC")
+    cursor.execute(f"SELECT cities.id, cities.name, states.name FROM cities, states WHERE cities.state_id = states.id ORDER BY id ASC")
     myresult = cursor.fetchall()
     for x in myresult:
         print(x)
